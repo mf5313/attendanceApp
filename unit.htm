@@ -1,0 +1,112 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: whitesmoke;
+            background-repeat: repeat-y;
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Left Menu Styles */
+        .left-menu {
+            width: 17%;
+            background-color: #333;
+            color: white;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-menu a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #444;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .left-menu a:hover {
+            background-color: #555;
+        }
+
+        /* Main content area */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-menu {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <?php
+        include "conn.php";
+        session_start();
+        include "logcheck.php";
+        include "nav.php";
+    ?>
+
+    <div class="container">
+
+        <!-- Left Menu for Options -->
+        <div class="left-menu">
+            <a href="#">Add Student</a>
+            <a href="#">View Students</a>
+            <a href="#">Edit Student</a>
+            <a href="#">Delete Student</a>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <table>
+                <tr><td>Add Student</td></tr>
+                <tr><td>Add Student</td></tr>
+            </table>
+        </div>
+
+    </div>
+
+    <?php
+        include "footer.php";
+    ?>
+
+</body>
